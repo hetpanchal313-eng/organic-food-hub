@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products – Organic Food Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="logo">
+            <span class="logo-icon">🌿</span>
+            <span class="logo-text">Organic<strong>Hub</strong></span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="products.html" class="btn-header">Shop Now</a>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</header>
+
+<!-- Page Hero -->
+<div class="page-hero">
+    <div class="section-label">Our Collection</div>
+    <h1>Fresh Organic <em>Products</em></h1>
+    <p>Handpicked from certified farms, delivered fresh daily</p>
+</div>
+
+<!-- Filters -->
+<section class="products-page">
+    <div class="container">
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+            <button class="filter-btn" onclick="filterProducts('vegetable', this)">🥬 Vegetables</button>
+            <button class="filter-btn" onclick="filterProducts('fruit', this)">🍎 Fruits</button>
+            <button class="filter-btn" onclick="filterProducts('grain', this)">🌾 Grains</button>
+            <button class="filter-btn" onclick="filterProducts('dairy', this)">🥛 Dairy</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- Vegetables -->
+            <div class="product-card" data-category="vegetable">
+                <div class="prod-badge">Best Seller</div>
+                <div class="prod-emoji">🍅</div>
+                <h4>Organic Tomatoes</h4>
+                <p class="prod-origin">Maharashtra Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹50 <small>/kg</small></span>
+                    <button class="btn-cart" onclick="addToCart('Organic Tomatoes')">+ Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="vegetable">
+                <div class="prod-emoji">🥦</div>
+                <h4>Fresh Broccoli</h4>
+                <p class="prod-origin">Himachal Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹80 <small>/piece</small></span>
+                    <button class="btn-cart" onclick="addToCart('Fresh Broccoli')">+ Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="vegetable">
+                <div class="prod-emoji">🥕</div>
+                <h4>Farm Carrots</h4>
+                <p class="prod-origin">Punjab Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹40 <small>/kg</small></span>
+                    <button class="btn-cart" onclick="addToCart('Farm Carrots')">+ Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="vegetable">
+                <div class="prod-emoji">🌽</div>
+                <h4>Sweet Corn</h4>
+                <p class="prod-origin">Gujarat Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹25 <small>/piece</small></span>
+                    <button class="btn-cart" onclick="addToCart('Sweet Corn')">+ Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="vegetable">
+                <div class="prod-emoji">🥬</div>
+                <h4>Baby Spinach</h4>
+                <p class="prod-origin">Nashik Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹35 <small>/bunch</small></span>
+                    <button class="btn-cart" onclick="addToCart('Baby Spinach')">+ Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="vegetable">
+                <div class="prod-emoji">🧅</div>
+                <h4>Red Onions</h4>
+                <p class="prod-origin">Rajasthan Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹30 <small>/kg</small></span>
+                    <button class="btn-cart" onclick="addToCart('Red Onions')">+ Cart</button>
+                </div>
+            </div>
+
+            <!-- Fruits -->
+            <div class="product-card" data-category="fruit">
+                <div class="prod-badge">Popular</div>
+                <div class="prod-emoji">🍋</div>
+                <h4>Fresh Lemons</h4>
+                <p class="prod-origin">Andhra Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹30 <small>/dozen</small></span>
+                    <button class="btn-cart" onclick="addToCart('Fresh Lemons')">+ Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="fruit">
+                <div class="prod-emoji">🍎</div>
+                <h4>Kashmiri Apples</h4>
+                <p class="prod-origin">Kashmir Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹120 <small>/kg</small></span>
+                    <button class="btn-cart" onclick="addToCart('Kashmiri Apples')">+ Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="fruit">
+                <div class="prod-emoji">🥭</div>
+                <h4>Alphonso Mangoes</h4>
+                <p class="prod-origin">Ratnagiri Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹200 <small>/dozen</small></span>
+                    <button class="btn-cart" onclick="addToCart('Alphonso Mangoes')">+ Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="fruit">
+                <div class="prod-emoji">🍇</div>
+                <h4>Black Grapes</h4>
+                <p class="prod-origin">Nashik Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹90 <small>/kg</small></span>
+                    <button class="btn-cart" onclick="addToCart('Black Grapes')">+ Cart</button>
+                </div>
+            </div>
+
+            <!-- Grains -->
+            <div class="product-card" data-category="grain">
+                <div class="prod-badge new">New</div>
+                <div class="prod-emoji">🌾</div>
+                <h4>Organic Wheat</h4>
+                <p class="prod-origin">MP Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹60 <small>/kg</small></span>
+                    <button class="btn-cart" onclick="addToCart('Organic Wheat')">+ Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="grain">
+                <div class="prod-emoji">🌿</div>
+                <h4>Brown Rice</h4>
+                <p class="prod-origin">West Bengal Farms</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹75 <small>/kg</small></span>
+                    <button class="btn-cart" onclick="addToCart('Brown Rice')">+ Cart</button>
+                </div>
+            </div>
+
+            <!-- Dairy -->
+            <div class="product-card" data-category="dairy">
+                <div class="prod-badge">Fresh</div>
+                <div class="prod-emoji">🥛</div>
+                <h4>Organic Milk</h4>
+                <p class="prod-origin">Gujarat Dairy</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹60 <small>/litre</small></span>
+                    <button class="btn-cart" onclick="addToCart('Organic Milk')">+ Cart</button>
+                </div>
+            </div>
+            <div class="product-card" data-category="dairy">
+                <div class="prod-emoji">🧀</div>
+                <h4>Farm Paneer</h4>
+                <p class="prod-origin">Punjab Dairy</p>
+                <div class="prod-footer">
+                    <span class="prod-price">₹90 <small>/250g</small></span>
+                    <button class="btn-cart" onclick="addToCart('Farm Paneer')">+ Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cart Summary -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header-bar">
+        <h3>🛒 Your Cart (<span id="cartCount">0</span>)</h3>
+        <button onclick="clearCart()">Clear</button>
+    </div>
+    <div id="cartItems" class="cart-items-list"></div>
+    <div class="cart-total-bar">Total: ₹<span id="cartTotal">0</span></div>
+</div>
+
+<div class="cart-toast" id="cartToast"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
